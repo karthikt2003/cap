@@ -1,7 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cap</groupId>
@@ -10,36 +12,44 @@
   <packaging>jar</packaging>
 
   <dependencies>
-    
-    <!-- ✅ Use Selenium 3.141.59 for Appium compatibility -->
+
+    <!-- ✅ Selenium 3 (Appium-compatible) -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
     </dependency>
 
-    <!-- ✅ Appium Java Client compatible with Selenium 3 -->
+    <!-- ✅ Appium Java Client (works with Selenium 3) -->
     <dependency>
       <groupId>io.appium</groupId>
       <artifactId>java-client</artifactId>
       <version>7.6.0</version>
     </dependency>
 
-    <!-- ✅ TestNG -->
+    <!-- ✅ Lombok (for reducing boilerplate code) -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.34</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- ✅ TestNG (for testing framework) -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.10.2</version>
     </dependency>
 
-    <!-- ✅ Extent Reports for reporting -->
+    <!-- ✅ Extent Reports (for HTML test reports) -->
     <dependency>
       <groupId>com.aventstack</groupId>
       <artifactId>extentreports</artifactId>
       <version>5.0.9</version>
     </dependency>
 
-    <!-- ✅ JSON for desired capabilities -->
+    <!-- ✅ JSON (for handling capabilities or config) -->
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
@@ -50,6 +60,8 @@
 
   <build>
     <plugins>
+
+      <!-- ✅ Compiler Plugin (Java 11) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -60,11 +72,13 @@
         </configuration>
       </plugin>
 
+      <!-- ✅ Surefire Plugin (to run TestNG tests) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.1.2</version>
       </plugin>
+
     </plugins>
   </build>
 
